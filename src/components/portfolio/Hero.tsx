@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown, Briefcase, Mail } from "lucide-react";
 import { roles } from "@/data/portfolio-data";
+import profilePhoto from "@/assets/profile.jpg";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -38,10 +39,12 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Avatar placeholder */}
-        <div className="mx-auto mb-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent p-1 animate-fade-in">
-          <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-            <span className="text-4xl font-display font-bold text-primary">RS</span>
-          </div>
+        <div className="mx-auto mb-8 w-36 h-36 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-accent p-1 animate-fade-in shadow-xl">
+          <img
+            src={profilePhoto}
+            alt="R Sam Victor - Full-Stack Software Engineer"
+            className="w-full h-full rounded-full object-cover"
+          />
         </div>
 
         <h1

@@ -1,6 +1,17 @@
 import { projects } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { TrendingUp, ExternalLink } from "lucide-react";
+import projectProductionMonitoring from "@/assets/project-production-monitoring.jpg";
+import projectAccounting from "@/assets/project-accounting.jpg";
+import projectSmt from "@/assets/project-smt.jpg";
+import projectPlanning from "@/assets/project-planning.jpg";
+
+const projectImages = [
+  projectProductionMonitoring,
+  projectAccounting,
+  projectSmt,
+  projectPlanning,
+];
 
 export default function Projects() {
   const { ref, visible } = useScrollAnimation();
@@ -25,9 +36,14 @@ export default function Projects() {
               className="group glass-card rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              {/* Placeholder image area */}
-              <div className="h-40 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <ExternalLink size={32} className="text-primary/40 group-hover:text-primary/70 transition-colors" />
+              {/* Project screenshot */}
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={projectImages[i] || projectImages[0]}
+                  alt={`${p.title} screenshot`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
 
               <div className="p-6">
