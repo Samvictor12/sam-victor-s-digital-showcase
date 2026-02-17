@@ -46,7 +46,7 @@ export default function Hero() {
           src={profileBg}
           alt=""
           aria-hidden="true"
-          className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-50"
+          className="absolute bottom-0 right-28 h-[90%] w-auto object-contain opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
       </div>
@@ -61,7 +61,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative flex p-36 max-sm:p-4 h-full ">
         <div className="max-w-2xl">
           {/* Orange badge */}
           <div
@@ -95,19 +95,19 @@ export default function Hero() {
           </div>
 
           <div
-            className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in"
+            className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in "
             style={{ animationDelay: "0.6s" }}
           >
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all max-sm:opacity-0"
             >
               <Download size={18} />
               Download CV
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all max-sm:opacity-0"
             >
               <Briefcase size={18} />
               My Work
