@@ -6,9 +6,14 @@ export default function Certificates() {
   const { ref, visible } = useScrollAnimation();
 
   return (
-    <section id="certificates" className="section-padding">
+    <section id="certificates" className="section-padding bg-card/50">
       <div className="container mx-auto">
-        <h2 className="section-title text-center">Certificates</h2>
+        <div className="text-center mb-4">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Achievements</span>
+        </div>
+        <h2 className="section-title text-center">
+          My <span className="text-primary">Certificates</span>
+        </h2>
         <p className="section-subtitle text-center">Professional certifications</p>
 
         <div
@@ -20,7 +25,7 @@ export default function Certificates() {
           {certificates.map((c) => (
             <div
               key={c.name}
-              className="glass-card rounded-xl p-6 max-w-sm hover:shadow-xl transition-shadow"
+              className="bg-card border border-border rounded-xl p-6 max-w-sm hover:border-primary/30 transition-all"
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Award size={24} className="text-primary" />

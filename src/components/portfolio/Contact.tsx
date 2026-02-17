@@ -15,9 +15,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-muted/30">
+    <section id="contact" className="section-padding">
       <div className="container mx-auto">
-        <h2 className="section-title text-center">Get In Touch</h2>
+        <div className="text-center mb-4">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Contact</span>
+        </div>
+        <h2 className="section-title text-center">
+          Get In <span className="text-primary">Touch</span>
+        </h2>
         <p className="section-subtitle text-center">Let's build something great together</p>
 
         <div
@@ -34,7 +39,7 @@ export default function Contact() {
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
             />
             <input
               type="email"
@@ -42,7 +47,7 @@ export default function Contact() {
               required
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
             />
             <textarea
               placeholder="Your Message"
@@ -50,11 +55,11 @@ export default function Contact() {
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none"
+              className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none text-foreground placeholder:text-muted-foreground"
             />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity w-full justify-center"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all w-full justify-center"
             >
               <Send size={18} />
               Send Message
@@ -63,7 +68,7 @@ export default function Contact() {
 
           {/* Info */}
           <div className="space-y-6">
-            <div className="glass-card rounded-xl p-6 space-y-5">
+            <div className="bg-card border border-border rounded-xl p-6 space-y-5">
               <a href="tel:+917200167548" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <Phone size={18} className="text-primary" />
