@@ -1,6 +1,5 @@
 import { experiences } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Circle } from "lucide-react";
 
 function TimelineCard({ exp, index }: { exp: typeof experiences[0]; index: number }) {
   const { ref, visible } = useScrollAnimation();
@@ -17,7 +16,7 @@ function TimelineCard({ exp, index }: { exp: typeof experiences[0]; index: numbe
       {/* Desktop layout */}
       <div className={`hidden md:flex w-full items-center ${isLeft ? "" : "flex-row-reverse"}`}>
         <div className={`w-5/12 ${isLeft ? "text-right pr-8" : "text-left pl-8"}`}>
-          <div className="glass-card rounded-xl p-6 hover:shadow-xl transition-shadow inline-block text-left">
+          <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all inline-block text-left">
             <div className="flex items-center gap-2 mb-2">
               {exp.current && (
                 <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary font-medium">
@@ -53,7 +52,7 @@ function TimelineCard({ exp, index }: { exp: typeof experiences[0]; index: numbe
           <div className="w-3 h-3 rounded-full bg-primary shrink-0 mt-2" />
           <div className="w-0.5 flex-1 bg-border" />
         </div>
-        <div className="glass-card rounded-xl p-5 mb-6 flex-1">
+        <div className="bg-card border border-border rounded-xl p-5 mb-6 flex-1">
           <div className="flex items-center gap-2 mb-2">
             {exp.current && (
               <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary font-medium">
@@ -80,9 +79,14 @@ function TimelineCard({ exp, index }: { exp: typeof experiences[0]; index: numbe
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding">
+    <section id="experience" className="section-padding bg-card/50">
       <div className="container mx-auto">
-        <h2 className="section-title text-center">Experience</h2>
+        <div className="text-center mb-4">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Career</span>
+        </div>
+        <h2 className="section-title text-center">
+          My <span className="text-primary">Experience</span>
+        </h2>
         <p className="section-subtitle text-center">My professional journey</p>
 
         <div className="relative mt-12 max-w-4xl mx-auto">

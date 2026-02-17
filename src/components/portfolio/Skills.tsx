@@ -1,58 +1,49 @@
 import { skills } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Code2, Database, Globe, Wrench, Layout } from "lucide-react";
 
-function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
-  const { ref, visible } = useScrollAnimation();
-
-  return (
-    <div ref={ref} className="space-y-1.5">
-      <div className="flex justify-between text-sm">
-        <span className="font-medium">{name}</span>
-        <span className="text-muted-foreground">{level}%</span>
-      </div>
-      <div className="h-2 rounded-full bg-muted overflow-hidden">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-1000 ease-out"
-          style={{
-            width: visible ? `${level}%` : "0%",
-            transitionDelay: `${delay}ms`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
+const categoryIcons: Record<string, React.ReactNode> = {
+  "Programming Languages": <Code2 size={20} />,
+  "Frameworks": <Layout size={20} />,
+  "Databases": <Database size={20} />,
+  "Web Technologies": <Globe size={20} />,
+  "Tools & Platforms": <Wrench size={20} />,
+};
 
 export default function Skills() {
   const { ref, visible } = useScrollAnimation();
 
   return (
-    <section id="skills" className="section-padding bg-muted/30">
+    <section id="skills" className="section-padding">
       <div className="container mx-auto">
-        <h2 className="section-title text-center">Skills</h2>
+        <div className="text-center mb-4">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest">My Skills</span>
+        </div>
+        <h2 className="section-title text-center">
+          Our <span className="text-primary">Services</span>
+        </h2>
         <p className="section-subtitle text-center">Technologies I work with daily</p>
 
         <div
           ref={ref}
-          className={`mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
+          className={`mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {skills.map((cat, ci) => (
-            <div key={cat.category} className="glass-card rounded-xl p-6 hover:shadow-xl transition-shadow">
-              <h3 className="font-display font-semibold text-lg mb-4 text-primary">
+          {skills.map((cat) => (
+            <div
+              key={cat.category}
+              className="group bg-card border border-border rounded-xl p-5 hover:bg-primary hover:border-primary transition-all duration-300 cursor-default"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 text-primary group-hover:bg-primary-foreground/20 group-hover:text-primary-foreground transition-colors">
+                {categoryIcons[cat.category] || <Code2 size={20} />}
+              </div>
+              <h3 className="font-display font-semibold text-sm mb-2 group-hover:text-primary-foreground transition-colors">
                 {cat.category}
               </h3>
-              <div className="space-y-4">
-                {cat.items.map((item, ii) => (
-                  <SkillBar
-                    key={item.name}
-                    name={item.name}
-                    level={item.level}
-                    delay={ci * 100 + ii * 80}
-                  />
-                ))}
-              </div>
+              <p className="text-xs text-muted-foreground group-hover:text-primary-foreground/70 transition-colors">
+                {cat.items.map((i) => i.name).join(", ")}
+              </p>
             </div>
           ))}
         </div>

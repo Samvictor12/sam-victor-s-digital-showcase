@@ -3,14 +3,16 @@ import { navLinks } from "@/data/portfolio-data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-10 px-4">
+    <footer className="border-t border-border py-10 px-4 bg-card/50">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-sm text-muted-foreground">© 2026 R Sam Victor. All rights reserved.</p>
+        <p className="text-sm text-muted-foreground">
+          © 2026 <span className="text-primary">R Sam Victor</span>. All rights reserved.
+        </p>
 
         <ul className="flex flex-wrap justify-center gap-4">
           {navLinks.slice(1).map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {l.label}
               </a>
             </li>
@@ -19,7 +21,7 @@ export default function Footer() {
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="p-2 rounded-lg border border-border hover:bg-muted transition-colors"
+          className="p-2 rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
           aria-label="Back to top"
         >
           <ArrowUp size={18} />

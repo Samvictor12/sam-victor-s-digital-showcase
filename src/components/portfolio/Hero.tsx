@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, Briefcase, Mail } from "lucide-react";
+import { ArrowDown, Briefcase, Mail, Download } from "lucide-react";
 import { roles } from "@/data/portfolio-data";
 import profileBg from "@/assets/profile-bg.png";
 
@@ -28,44 +28,57 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background profile image - right side, modern faded effect */}
-      <div className="absolute right-0 top-0 h-full w-1/2 md:w-5/12 pointer-events-none select-none">
+      {/* Geometric decorative lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="absolute top-1/4 right-1/4 w-96 h-96 opacity-10" viewBox="0 0 400 400" fill="none">
+          <polygon points="200,50 350,150 300,350 100,350 50,150" stroke="hsl(var(--primary))" strokeWidth="1" />
+          <polygon points="200,80 320,160 280,320 120,320 80,160" stroke="hsl(var(--primary))" strokeWidth="0.5" />
+          <line x1="200" y1="50" x2="200" y2="350" stroke="hsl(var(--primary))" strokeWidth="0.5" />
+          <line x1="50" y1="150" x2="350" y2="150" stroke="hsl(var(--primary))" strokeWidth="0.5" />
+        </svg>
+      </div>
+
+      {/* Profile image - right side background */}
+      <div className="absolute right-0 bottom-0 h-full w-1/2 pointer-events-none select-none hidden md:block">
         <img
           src={profileBg}
           alt=""
           aria-hidden="true"
-          className="absolute bottom-0 right-0 h-full w-full object-contain object-right-bottom opacity-15 dark:opacity-10"
+          className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-30"
         />
-        {/* Gradient overlay for smooth blend */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
-
-      {/* Floating accent shapes */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-2xl">
-          <p
-            className="text-sm uppercase tracking-widest text-primary font-medium mb-4 animate-fade-in"
+          {/* Orange badge */}
+          <div
+            className="inline-block px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold mb-6 animate-fade-in"
           >
-            Full-Stack Software Engineer
-          </p>
+            Hello, I am
+          </div>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-4 animate-fade-in"
+            className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-2 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             R Sam Victor
           </h1>
 
+          <p
+            className="text-muted-foreground text-lg mb-2 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
+            A Professional Full-Stack Developer and Software Engineer.
+          </p>
+
           <div
             className="h-10 flex items-center mb-8 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            <span className="text-xl md:text-2xl text-muted-foreground">
+            <span className="text-xl md:text-2xl text-primary font-medium">
               {text}
             </span>
             <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
@@ -77,26 +90,26 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all"
             >
-              <Briefcase size={18} />
-              View Projects
+              <Download size={18} />
+              Download CV
             </a>
             <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card text-foreground font-medium hover:bg-muted transition-colors"
+              href="#projects"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all"
             >
-              <Mail size={18} />
-              Contact Me
+              <Briefcase size={18} />
+              My Work
             </a>
           </div>
 
           <a
             href="#about"
-            className="inline-flex animate-bounce text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex w-10 h-10 items-center justify-center rounded-full border-2 border-primary text-primary animate-bounce"
             aria-label="Scroll down"
           >
-            <ArrowDown size={24} />
+            <ArrowDown size={18} />
           </a>
         </div>
       </div>
