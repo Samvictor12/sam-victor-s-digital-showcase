@@ -1,6 +1,6 @@
 import { projects } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, ExternalLink } from "lucide-react";
 import projectProductionMonitoring from "@/assets/project-production-monitoring.jpg";
 import projectAccounting from "@/assets/project-accounting.jpg";
 import projectSmt from "@/assets/project-smt.jpg";
@@ -23,7 +23,7 @@ export default function Projects() {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Portfolio</span>
         </div>
         <h2 className="section-title text-center">
-          Our <span className="text-primary">Portfolio</span>
+          Featured <span className="text-primary">Projects</span>
         </h2>
         <p className="section-subtitle text-center">
           Solutions I've built to solve real-world problems
@@ -31,40 +31,53 @@ export default function Projects() {
 
         <div
           ref={ref}
-          className={`mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-700 ${
+          className={`mt-12 space-y-8 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           {projects.map((p, i) => (
             <div
               key={p.title}
-              className="group relative rounded-xl overflow-hidden cursor-pointer"
-              style={{ animationDelay: `${i * 100}ms` }}
+              className={`grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-border bg-card ${
+                i % 2 === 1 ? "md:direction-rtl" : ""
+              }`}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              {/* Image */}
+              <div className={`relative overflow-hidden ${i % 2 === 1 ? "md:order-2" : ""}`}>
                 <img
                   src={projectImages[i] || projectImages[0]}
                   alt={`${p.title} screenshot`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 md:h-full object-cover"
                   loading="lazy"
                 />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-primary text-primary-foreground">
+                    0{i + 1}
+                  </span>
+                </div>
               </div>
 
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center p-6">
-                <h3 className="font-display font-semibold text-lg mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{p.description}</p>
-                <div className="flex flex-wrap gap-2 mb-3">
+              {/* Content */}
+              <div className={`p-8 flex flex-col justify-center space-y-5 ${i % 2 === 1 ? "md:order-1" : ""}`}>
+                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">
+                  {p.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {p.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
                   {p.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium"
+                      className="px-3 py-1.5 text-xs rounded-full border border-primary/30 text-primary font-medium bg-primary/5"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-2 text-sm text-primary font-medium">
+
+                <div className="flex items-center gap-2 text-sm text-primary font-semibold pt-2">
                   <TrendingUp size={16} />
                   {p.metric}
                 </div>
