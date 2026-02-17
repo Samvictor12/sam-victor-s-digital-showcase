@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown, Briefcase, Mail } from "lucide-react";
 import { roles } from "@/data/portfolio-data";
-import profilePhoto from "@/assets/profile.jpg";
+import profileBg from "@/assets/profile-bg.png";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -28,66 +28,76 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
     >
+      {/* Background profile image - right side, modern faded effect */}
+      <div className="absolute right-0 top-0 h-full w-1/2 md:w-5/12 pointer-events-none select-none">
+        <img
+          src={profileBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-0 right-0 h-full w-full object-contain object-right-bottom opacity-15 dark:opacity-10"
+        />
+        {/* Gradient overlay for smooth blend */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+      </div>
+
+      {/* Floating accent shapes */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+
       <div className="relative z-10 container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* Profile image - left side, full view */}
-          <div className="w-full md:w-5/12 flex-shrink-0 animate-fade-in">
-            <img
-              src={profilePhoto}
-              alt="R Sam Victor - Full-Stack Software Engineer"
-              className="w-full h-auto max-h-[80vh] object-contain rounded-2xl"
-            />
+        <div className="max-w-2xl">
+          <p
+            className="text-sm uppercase tracking-widest text-primary font-medium mb-4 animate-fade-in"
+          >
+            Full-Stack Software Engineer
+          </p>
+
+          <h1
+            className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-4 animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            R Sam Victor
+          </h1>
+
+          <div
+            className="h-10 flex items-center mb-8 animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <span className="text-xl md:text-2xl text-muted-foreground">
+              {text}
+            </span>
+            <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
           </div>
 
-          {/* Text content - right side */}
-          <div className="flex-1 text-center md:text-left">
-            <h1
-              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-4 animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
-            >
-              R Sam Victor
-            </h1>
-
-            <div
-              className="h-10 flex items-center justify-center md:justify-start mb-8 animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <span className="text-xl md:text-2xl text-muted-foreground">
-                {text}
-              </span>
-              <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
-            </div>
-
-            <div
-              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-16 animate-fade-in"
-              style={{ animationDelay: "0.6s" }}
-            >
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-              >
-                <Briefcase size={18} />
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card text-foreground font-medium hover:bg-muted transition-colors"
-              >
-                <Mail size={18} />
-                Contact Me
-              </a>
-            </div>
-
+          <div
+            className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in"
+            style={{ animationDelay: "0.6s" }}
+          >
             <a
-              href="#about"
-              className="inline-flex animate-bounce text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Scroll down"
+              href="#projects"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
             >
-              <ArrowDown size={24} />
+              <Briefcase size={18} />
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card text-foreground font-medium hover:bg-muted transition-colors"
+            >
+              <Mail size={18} />
+              Contact Me
             </a>
           </div>
+
+          <a
+            href="#about"
+            className="inline-flex animate-bounce text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Scroll down"
+          >
+            <ArrowDown size={24} />
+          </a>
         </div>
       </div>
     </section>
