@@ -46,9 +46,19 @@ export default function Hero() {
           src={profileBg}
           alt=""
           aria-hidden="true"
-           className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-50"
+          className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+      </div>
+
+      {/* Profile image - mobile */}
+      <div className="absolute right-0 bottom-0 h-full w-full pointer-events-none select-none md:hidden">
+        <img
+          src={profileBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-0 right-0 h-[60%] w-auto object-contain opacity-25"
+        />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
