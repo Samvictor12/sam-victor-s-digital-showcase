@@ -46,9 +46,9 @@ export default function Hero() {
           src={profileBg}
           alt=""
           aria-hidden="true"
-          className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-30"
+           className="absolute bottom-0 right-8 h-[90%] w-auto object-contain opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
