@@ -22,7 +22,7 @@ export default function Header() {
     >
       <nav className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#home" className="text-2xl font-display font-bold text-primary">
-          CODER
+          Developer
         </a>
 
         {/* Desktop nav */}
