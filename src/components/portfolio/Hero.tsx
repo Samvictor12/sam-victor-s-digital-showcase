@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown, Briefcase, Mail, Download } from "lucide-react";
 import { roles } from "@/data/portfolio-data";
-import profileBg from "@/assets/profile-bg.png";
+import profileBg from "@/assets/profile-hero-bg.png";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);

@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 import { highlights } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect, useState } from "react";
-import profilePhoto from "@/assets/profile.jpg";
+import profilePhoto from "@/assets/profile-bg.png";
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const { ref, visible } = useScrollAnimation();
