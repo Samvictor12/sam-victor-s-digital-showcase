@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/portfolio-data";
-import { useTheme } from "@/hooks/useTheme";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { dark, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -40,13 +38,6 @@ export default function Header() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={toggle}
-            className="p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label="Toggle theme"
-          >
-            {dark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
