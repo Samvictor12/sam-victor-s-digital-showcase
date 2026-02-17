@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen h-screen flex items-center overflow-hidden"
     >
       {/* Geometric decorative lines */}
       <div className="absolute inset-0 pointer-events-none">
@@ -61,59 +61,62 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative flex p-36 max-sm:p-4 h-full ">
-        <div className="max-w-2xl">
-          {/* Orange badge */}
-          <div
-            className="inline-block px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold mb-6 animate-fade-in"
-          >
-            Hello, I am
-          </div>
 
-          <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-2 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            R Sam Victor
-          </h1>
 
-          <p
-            className="text-muted-foreground text-lg mb-2 animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
-          >
-            A Professional Full-Stack Developer and Software Engineer.
-          </p>
-
-          <div
-            className="h-10 flex items-center mb-8 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <span className="text-xl md:text-2xl text-primary font-medium">
-              {text}
-            </span>
-            <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
-          </div>
-
-          <div
-            className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in "
-            style={{ animationDelay: "0.6s" }}
-          >
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all max-sm:opacity-0"
+      <div className="relative flex p-36 max-sm:p-4 h-full">
+        <div className=" flex flex-col items-start justify-between gap-6 animate-fade-in h-full py-20">
+          <div>
+            {/* Orange badge */}
+            <div
+              className="inline-block px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold mb-6 animate-fade-in"
             >
-              <Download size={18} />
-              Download CV
-            </a>
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all max-sm:opacity-0"
-            >
-              <Briefcase size={18} />
-              My Work
-            </a>
-          </div>
+              Hello, I am
+            </div>
 
+            <h1
+              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-2 animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              R Sam Victor
+            </h1>
+
+            <p
+              className="text-muted-foreground text-lg mb-2 animate-fade-in"
+              style={{ animationDelay: "0.3s" }}
+            >
+              A Professional Full-Stack Developer and Software Engineer.
+            </p>
+
+            <div
+              className="h-10 flex items-center mb-8 animate-fade-in"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <span className="text-xl md:text-2xl text-primary font-medium">
+                {text}
+              </span>
+              <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
+            </div>
+
+            <div
+              className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in max-sm:hidden "
+              style={{ animationDelay: "0.6s" }}
+            >
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all"
+              >
+                <Download size={18} />
+                Download CV
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all"
+              >
+                <Briefcase size={18} />
+                My Work
+              </a>
+            </div>
+          </div>
           <a
             href="#about"
             className="inline-flex w-10 h-10 items-center justify-center rounded-full border-2 border-primary text-primary animate-bounce"
