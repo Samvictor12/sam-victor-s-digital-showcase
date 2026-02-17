@@ -7,13 +7,13 @@ import Projects from "@/components/portfolio/Projects";
 import Certificates from "@/components/portfolio/Certificates";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
-import ScrollToTop from "@/components/portfolio/scrolltop";
+import ScrollToTop from "@/components/portfolio/ScrollToTop";
 
 const Index = () => (
   <div className="min-h-screen bg-background">
     <Header />
+    <ScrollToTop />
     <main>
-      <ScrollToTop />
       <Hero />
       <About />
       <Skills />

@@ -1,4 +1,3 @@
-import { ArrowUp } from "lucide-react";
 import { navLinks } from "@/data/portfolio-data";
 
 export default function Footer() {
@@ -18,14 +17,6 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="p-2 rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
-          aria-label="Back to top"
-        >
-          <ArrowUp size={18} />
-        </button>
       </div>
     </footer>
   );
