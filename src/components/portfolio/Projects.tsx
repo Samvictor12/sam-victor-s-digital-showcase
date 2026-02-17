@@ -17,13 +17,14 @@ export default function Projects() {
   const { ref, visible } = useScrollAnimation();
 
   return (
-    <section id="projects" className="section-padding">
-      <div className="container mx-auto">
+    <section id="projects" className="section-padding relative">
+      <div className="absolute inset-0 bg-glow-purple pointer-events-none" />
+      <div className="container mx-auto relative">
         <div className="text-center mb-4">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Portfolio</span>
         </div>
         <h2 className="section-title text-center">
-          Featured <span className="text-primary">Projects</span>
+          Featured <span className="text-gradient">Projects</span>
         </h2>
         <p className="section-subtitle text-center">
           Solutions I've built to solve real-world problems
@@ -38,7 +39,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div
               key={p.title}
-              className={`grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-border bg-card ${
+              className={`grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-border bg-card/50 backdrop-blur-sm ${
                 i % 2 === 1 ? "md:direction-rtl" : ""
               }`}
             >
@@ -51,8 +52,8 @@ export default function Projects() {
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-primary text-primary-foreground">
-                    0{i + 1}
+                  <span className="px-3 py-1.5 text-xs font-semibold rounded-full btn-gradient">
+                    Featured Project
                   </span>
                 </div>
               </div>
@@ -77,9 +78,12 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 text-sm text-primary font-semibold pt-2">
-                  <TrendingUp size={16} />
-                  {p.metric}
+                <div className="flex items-center justify-between pt-2">
+                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
+                    <TrendingUp size={16} />
+                    {p.metric}
+                  </div>
+                  <ExternalLink size={16} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
                 </div>
               </div>
             </div>

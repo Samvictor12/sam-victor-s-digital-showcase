@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, Briefcase, Mail, Download } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { roles } from "@/data/portfolio-data";
 import profileBg from "@/assets/profile-hero-bg.png";
 
@@ -30,14 +30,10 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen h-screen flex items-center overflow-hidden"
     >
-      {/* Geometric decorative lines */}
+      {/* Purple glow background */}
       <div className="absolute inset-0 pointer-events-none">
-        <svg className="absolute top-1/4 right-1/4 w-96 h-96 opacity-10" viewBox="0 0 400 400" fill="none">
-          <polygon points="200,50 350,150 300,350 100,350 50,150" stroke="hsl(var(--primary))" strokeWidth="1" />
-          <polygon points="200,80 320,160 280,320 120,320 80,160" stroke="hsl(var(--primary))" strokeWidth="0.5" />
-          <line x1="200" y1="50" x2="200" y2="350" stroke="hsl(var(--primary))" strokeWidth="0.5" />
-          <line x1="50" y1="150" x2="350" y2="150" stroke="hsl(var(--primary))" strokeWidth="0.5" />
-        </svg>
+        <div className="absolute top-1/3 right-1/3 w-[600px] h-[600px] bg-glow-purple rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(ellipse,hsl(330_80%_60%/0.1),transparent_70%)] rounded-full blur-2xl" />
       </div>
 
       {/* Profile image - right side background */}
@@ -61,15 +57,11 @@ export default function Hero() {
         />
       </div>
 
-
-
       <div className="relative flex p-36 max-sm:p-4 h-full">
-        <div className=" flex flex-col items-start justify-between gap-6 animate-fade-in h-full py-20">
+        <div className="flex flex-col items-start justify-between gap-6 animate-fade-in h-full py-20">
           <div>
-            {/* Orange badge */}
-            <div
-              className="inline-block px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold mb-6 animate-fade-in"
-            >
+            {/* Gradient badge */}
+            <div className="inline-block px-4 py-1.5 rounded-md btn-gradient text-sm mb-6 animate-fade-in">
               Hello, I am
             </div>
 
@@ -81,7 +73,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-muted-foreground text-lg mb-2 animate-fade-in"
+              className="text-muted-foreground text-lg mb-2 italic animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
               A Professional Full-Stack Developer and Software Engineer.
@@ -91,29 +83,22 @@ export default function Hero() {
               className="h-10 flex items-center mb-8 animate-fade-in"
               style={{ animationDelay: "0.4s" }}
             >
-              <span className="text-xl md:text-2xl text-primary font-medium">
+              <span className="text-xl md:text-2xl text-gradient font-medium">
                 {text}
               </span>
               <span className="typewriter-cursor ml-0.5 inline-block w-0 h-7" />
             </div>
 
             <div
-              className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in max-sm:hidden "
+              className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in max-sm:hidden"
               style={{ animationDelay: "0.6s" }}
             >
               <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all"
+                href="#contact"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md btn-gradient hover:brightness-110 transition-all"
               >
-                <Download size={18} />
-                Download CV
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border-2 border-foreground/20 text-foreground font-semibold hover:border-primary hover:text-primary transition-all"
-              >
-                <Briefcase size={18} />
-                My Work
+                <Mail size={18} />
+                Contact Me
               </a>
             </div>
           </div>

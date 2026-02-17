@@ -19,8 +19,8 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#home" className="text-2xl font-display font-bold text-primary">
-          Developer
+        <a href="#home" className="text-2xl font-display font-bold text-gradient">
+          Portfolio
         </a>
 
         {/* Desktop nav */}
@@ -29,7 +29,7 @@ export default function Header() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                className="px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               >
                 {l.label}
               </a>
@@ -57,7 +57,7 @@ export default function Header() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  className="block px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 >
                   {l.label}
                 </a>
