@@ -2,8 +2,8 @@ import { MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const techStack = [
-  "React", "Java", "TypeScript", "Spring Boot", "Express",
-  "MySQL", "PostgreSQL", "Docker", "Tailwind CSS", "Git",
+  "React", "JavaScript", "TypeScript", "Express", "Java", "Spring Boot",
+  "MySQL", "PostgreSQL", "Docker", "Tailwind CSS", "Git", "n8n",
 ];
 
 export default function About() {
@@ -22,9 +22,8 @@ export default function About() {
 
         <div
           ref={ref}
-          className={`mt-12 max-w-3xl mx-auto text-center transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mt-12 max-w-3xl mx-auto text-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <p className="text-foreground leading-relaxed text-lg">
             Software Engineer with experience in developing and implementing web applications.

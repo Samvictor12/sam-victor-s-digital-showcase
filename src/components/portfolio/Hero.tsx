@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen h-screen flex items-center overflow-hidden"
+      className="relative min-h-lvh h-svh flex items-center overflow-hidden w-full"
     >
       {/* Purple glow background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -37,12 +37,12 @@ export default function Hero() {
       </div>
 
       {/* Profile image - right side background */}
-      <div className="absolute right-0 bottom-0 h-full w-1/2 pointer-events-none select-none hidden md:block">
+      <div className="absolute right-0 bottom-0 h-full w-full pointer-events-none select-none hidden md:block">
         <img
           src={profileBg}
           alt=""
           aria-hidden="true"
-          className="absolute bottom-0 right-28 h-[90%] w-auto object-contain opacity-50"
+          className="absolute bottom-0 right-28 h-[90%] w-auto object-contain opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
       </div>
@@ -57,16 +57,11 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative flex p-36 max-sm:p-4 h-full">
-        <div className="flex flex-col items-start justify-between gap-6 animate-fade-in h-full py-20">
+      <div className="relative flex p-36 max-sm:p-4 h-full w-full">
+        <div className="flex flex-col items-start justify-between gap-6 animate-fade-in h-full py-20 w-full">
           <div>
-            {/* Gradient badge */}
-            <div className="inline-block px-4 py-1.5 rounded-md btn-gradient text-sm mb-6 animate-fade-in">
-              Hello, I am
-            </div>
-
             <h1
-              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-2 animate-fade-in"
+              className="text-7xl sm:text-6xl md:text-8xl font-display font-bold tracking-tight mb-2 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               R Sam Victor

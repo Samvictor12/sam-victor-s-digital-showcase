@@ -25,7 +25,7 @@ export default function Certificates() {
           {certificates.map((c) => (
             <div
               key={c.name}
-              className="bg-card border border-border rounded-xl p-6 max-w-sm hover:border-primary/30 transition-all"
+              className="bg-card border border-primary/30 rounded-xl py-6 px-3 max-w-sm hover:border-primary transition-all"
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Award size={24} className="text-primary" />

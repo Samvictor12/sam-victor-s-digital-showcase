@@ -1,10 +1,10 @@
 import { projects } from "@/data/portfolio-data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { TrendingUp, ExternalLink } from "lucide-react";
-import projectProductionMonitoring from "@/assets/project-production-monitoring.jpg";
+import projectProductionMonitoring from "@/assets/project-production-monitoring.png";
 import projectAccounting from "@/assets/project-accounting.jpg";
-import projectSmt from "@/assets/project-smt.jpg";
-import projectPlanning from "@/assets/project-planning.jpg";
+import projectSmt from "@/assets/project-smt.png";
+import projectPlanning from "@/assets/project-planning.png";
 
 const projectImages = [
   projectProductionMonitoring,
@@ -39,7 +39,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div
               key={p.title}
-              className={`grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-border bg-card/50 backdrop-blur-sm ${
+              className={`grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border bg-card/50 border-border backdrop-blur-sm ${
                 i % 2 === 1 ? "md:direction-rtl" : ""
               }`}
             >
@@ -51,15 +51,15 @@ export default function Projects() {
                   className="w-full h-64 md:h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 right-4">
                   <span className="px-3 py-1.5 text-xs font-semibold rounded-full btn-gradient">
-                    Featured Project
+                    {"Project - "+(i+1)}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className={`p-8 flex flex-col justify-center space-y-5 ${i % 2 === 1 ? "md:order-1" : ""}`}>
+              <div className={`py-8 px-2 flex flex-col justify-center border border-primary/30 hover:border-primary space-y-5 ${i % 2 === 1 ? "md:order-1" : ""}`}>
                 <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">
                   {p.title}
                 </h3>

@@ -20,7 +20,7 @@ const contactInfo = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "sam-victor",
-    href: "https://www.linkedin.com/in/sam-victor",
+    href: "https://www.linkedin.com/in/sam-victor-2b6945217",
     external: true,
   },
 ];
@@ -48,7 +48,7 @@ export default function Contact() {
 
         <div
           ref={ref}
-          className={`mt-12 grid md:grid-cols-2 gap-12 max-w-4xl mx-auto transition-all duration-700 ${
+          className={`mt-12 flex flex-col items-center justify-center gap-12 mx-auto transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -79,7 +79,7 @@ export default function Contact() {
           </div>
 
           {/* Right — contact form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {/* <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               placeholder="Your Name"
@@ -111,7 +111,7 @@ export default function Contact() {
               <Send size={18} />
               Send Message
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </section>
